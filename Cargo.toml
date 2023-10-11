@@ -11,4 +11,7 @@ edition = "2018"
 
 [dependencies]
 glob = "0.3.0"
+num = {version="0.3.0", features=["serde"]}
 
+[features]
+have_testdata = []

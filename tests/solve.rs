@@ -1,13 +1,13 @@
+use std::env;
+use std::error::Error;
 use std::fs::File;
 use std::path::Path;
 use std::path::PathBuf;
-use std::env;
-use std::error::Error;
-
 
 #[test]
+#[cfg_attr(not(feature = "have_testdata"), ignore)]
 fn solve() -> Result<(), Box<dyn Error>> {
-    use sparse21::System;
+    use sparse21::system::System;
 
     let mut p = env::current_dir()?;
     p.push("tests/data/mat0.mat");
@@ -25,4 +25,3 @@ fn solve() -> Result<(), Box<dyn Error>> {
 fn main() -> Result<(), Box<dyn Error>> {
     return solve();
 }
-
